@@ -6,6 +6,7 @@ use App\Http\Requests\UsersRequest;
 use App\Role;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class AdminUsersController extends Controller
 {
@@ -43,8 +44,22 @@ class AdminUsersController extends Controller
      */
     public function store(UsersRequest $request)
     {
-        //
-        return $request->all();
+
+/*        User::create($request->all());
+
+        return redirect('/admin/users');*/
+
+        User::create([
+            'name' => $request['name'],
+            'email' => $request['email'],
+            'role_id' => $request['role_id'],
+            'is_active' => $request['is_active'],
+            'password' => Hash::make($request['password']),
+        ]);
+
+        return redirect('/admin/users');
+        
+/*        return $request->all();*/
 
     }
 
