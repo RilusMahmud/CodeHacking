@@ -47,8 +47,6 @@ class AdminUsersController extends Controller
     {
 
 //        User::create($request->all());
-//
-//        return redirect('/admin/users');
 
 //        User::create([
 //            'name' => $request['name'],
@@ -57,7 +55,6 @@ class AdminUsersController extends Controller
 //            'is_active' => $request['is_active'],
 //            'password' => Hash::make($request['password']),
 //        ]);
-
 
         $input = $request->all();
 
@@ -77,8 +74,7 @@ class AdminUsersController extends Controller
 
         User::create($input);
 
-
-//        return redirect('/admin/users');
+        return redirect('/admin/users');
 
 //        return $request->all();
 
