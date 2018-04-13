@@ -2,6 +2,12 @@
 
 @section('content')
 
+    @if(Session::has('deleted_user'))
+
+        <p class="bg-danger">{{session('deleted_user')}}</p>
+
+    @endif
+
     <h1>Users</h1>
 
     <table class="table">
@@ -25,7 +31,8 @@
 
                 <tr>
                     <td>{{$user->id}}</td>
-                    <td><img height="50px" src="{{$user->photo ? $user->photo->file : 'http://placehold.it/100x100'}}" alt=""></td>
+                    <td><img class="img-circle" height="50px" src="{{$user->photo ? $user->photo->file : 'http://placehold.it/100x100'}}"
+                             alt=""></td>
                     <td><a href="{{route('users.edit', $user->id)}}">{{$user->name}}</a></td>
                     <td>{{$user->email}}</td>
                     <td>{{$user->role ? $user->role->name:'User has no role'}}</td>
