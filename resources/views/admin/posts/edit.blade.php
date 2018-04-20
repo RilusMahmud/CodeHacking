@@ -37,14 +37,14 @@
             </div>
 
             <div class="form-group">
-                {!! Form::submit('Update post', ['class'=>'btn btn-primary col-sm-6']) !!}
+                {!! Form::submit('Update post', ['class'=>'btn btn-primary col-sm-3 pull-left']) !!}
             </div>
             {!! Form::close() !!}
 
 
             {!! Form::open(['method'=>'DELETE', 'action'=>['AdminPostsController@destroy', $post->id]]) !!}
             <div class="form-group">
-                {!! Form::submit('Delete post', ['class'=>'btn btn-danger col-sm-6']) !!}
+                {!! Form::submit('Delete post', ['class'=>'btn btn-danger col-sm-3 pull-right']) !!}
             </div>
             {!! Form::close() !!}
 
