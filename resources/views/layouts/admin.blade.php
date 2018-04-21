@@ -24,7 +24,7 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-
+    @yield('styles')
 
 
 </head>
@@ -174,7 +174,7 @@
                             </li>
 
                             <li>
-                                <a href="{{route('media.upload')}}">Upload Media</a>
+                                <a href="{{route('media.create')}}">Upload Media</a>
                             </li>
 
                         </ul>
@@ -349,6 +349,8 @@
 <!-- jQuery -->
 <script src="{{asset('js/libs.js')}}"></script>
 
+
+@yield('scripts')
 
 @yield('footer')
 
